@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Words</title>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="bower_components/split-pane/split-pane.css" />
+		<link rel="stylesheet" href="bower_components/angular-resizable/angular-resizable.min.css" />
+		<link rel="stylesheet" type="text/css" href="stylesheets/myResize.css" />
+
+	</head>
+	<body ng-app="words" ng-controller="wordsController" >
+		<div class="container-fluid">
+			<button class="btn btn-warning" ng-click="getWords()">Getwords</button>
+			<button type="button" class="btn btn-lg btn-danger" aria-label="Left Align" ng-click="fontSize = fontSize - 2">
+			  <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+			</button>
+			<button type="button" class="btn btn-lg btn-success" aria-label="Left Align" ng-click="fontSize = fontSize + 2">
+			  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+			</button>
+		</div>
+
+		<div class="container-fluid" ng-cloak>
+			<div class="row">
+				<table class="table table-bordered" ng-cloak style="background: #99ff99; min-height:100%; height:100%;">
+					<tr ng-repeat="bla in words">
+						<td class="theRow" style="border: 3px solid black; font-size: {{fontSize}}px;  background: {{myColors[$index][0]}}; text-align: center; color: {{textColor($index, 0)}};" ng-click=changeColor($index,0)>
+							{{bla[0]}}
+						</td>
+						<td class="theRow" style="border: 3px solid black; font-size: {{fontSize}}px; background: {{myColors[$index][1]}}; text-align: center; color: {{textColor($index, 1)}};" ng-click=changeColor($index,1)>
+							{{bla[1]}}
+						</td>
+						<td class="theRow" style="border: 3px solid black; font-size: {{fontSize}}px; background: {{myColors[$index][2]}}; text-align: center; color: {{textColor($index, 2)}};" ng-click=changeColor($index,2)>
+							{{bla[2]}}
+						</td>
+						<td class="theRow" style="border: 3px solid black; font-size: {{fontSize}}px; background: {{myColors[$index][3]}}; text-align: center; color: {{textColor($index, 3)}};" ng-click=changeColor($index,3)>
+							{{bla[3]}}
+						</td>
+						<td class="theRow" style="border: 3px solid black; font-size: {{fontSize}}px; background: {{myColors[$index][4]}}; text-align: center; color: {{textColor($index, 4)}};" ng-click=changeColor($index,4)>
+							{{bla[4]}}
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+
+
+	</body>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+	<script src="bower_components/angular-resizable/angular-resizable.min.js"></script>
+	<script src="app.js"></script>
+	<script src="scripts/services/wordsService.js"></script>
+
+	<script src="scripts/controllers/wordsController.js"></script>
+
+</html>

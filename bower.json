@@ -1,0 +1,29 @@
+{
+  "name": "words",
+  "authors": [
+    "Wessel Wessels <wessel.wesselsmail@gmail.com>"
+  ],
+  "description": "words",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.4.7",
+    "bootstrap": "3.3.6",
+    "bootstrap-ui": "1.3.2",
+    "angular-bootstrap": "^1.3.2",
+    "angular-split-pane": "^1.2.0",
+    "angular-resizable": "^1.2.0"
+  },
+  "resolutions": {
+    "angular": "1.4.7"
+  }
+}
